@@ -26,9 +26,13 @@
     "@angular/core": "^20.1.0-next.0",
     "@angular/forms": "^20.1.0-next.0",
     "@angular/platform-browser": "^20.1.0-next.0",
+    "@angular/platform-browser-dynamic": "^20.1.0",
     "@angular/platform-server": "^20.1.0-next.0",
     "@angular/router": "^20.1.0-next.0",
     "@angular/ssr": "^20.1.0-rc.0",
+    "@fortawesome/fontawesome-free": "^7.0.0",
+    "@ngx-translate/core": "^17.0.0",
+    "@ngx-translate/http-loader": "^17.0.0",
     "autoprefixer": "^10.4.21",
     "express": "^5.1.0",
     "postcss": "^8.5.6",
@@ -43,12 +47,7 @@
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
-    "jasmine-core": "~5.8.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.8.2"
   }
 }

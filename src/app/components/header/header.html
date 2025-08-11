@@ -1,0 +1,96 @@
+<header class="bg-[#f8f5ef] w-full px-6 py-4 flex justify-between items-center">
+  <!-- Left icons -->
+  <div class="flex gap-3 items-center">
+    <button 
+    (click)="redirectToFacebookPage()"
+    class="rounded-full w-10 h-10">
+        <img 
+        src="/svg/facebook.svg" 
+        alt="Facebook Icon"
+        loading="eager"
+        class="w-full h-full"
+        />
+    </button>
+    <!-- <button class="border border-orange-500 text-orange-500 rounded-md p-1">
+      <i class="fab fa-instagram"></i>
+    </button> -->
+  </div>
+
+  <!-- Center navigation -->
+  <nav class="flex flex-col items-center gap-2">
+    <img 
+    src="/images/warm-home-icon.png" 
+    alt="Lovely Roses Logo"
+    width="80"
+    height="80"
+    loading="eager" 
+    />
+    <ul class="flex gap-6 text-main text-sm font-medium">
+      <li 
+      class="cursor-pointer hover:text-orange-700"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}"
+      routerLink="/"
+      >{{ "Home" }}
+      </li>
+      <li 
+      class="cursor-pointer hover:text-orange-700"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}"
+      routerLink="/about"
+      >
+      {{ "About"  }}
+      </li>
+      <li 
+      class="cursor-pointer hover:text-orange-700"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}"
+      routerLink="/products"
+      >
+      {{ "Products" }}
+      </li>
+      <li 
+      class="cursor-pointer hover:text-orange-700">
+      {{ "FAQ" }}
+      </li>
+      <li 
+      class="cursor-pointer hover:text-orange-700"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}"
+      routerLink="/blogs"
+      >
+        {{ "Blogs" }}</li>
+      <li 
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}"
+      routerLink="/contact"
+      class="cursor-pointer hover:text-orange-700">
+        {{ "Contact" }}
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Right section -->
+  <div class="flex items-center gap-4">
+    <button class="border border-main text-main rounded-full px-4 py-1 text-sm hover:bg-orange-100">
+      Call us
+    </button>
+
+    <div class="text-main text-sm flex items-center gap-2">
+      <span class="hover:underline cursor-pointer">KA</span> ·
+      <span class="underline cursor-pointer">EN</span> ·
+      <span class="hover:underline cursor-pointer">RU</span>
+    </div>
+
+    <button class="text-main text-lg">
+      <i class="fas fa-search"></i>
+    </button>
+    <button class="text-main text-lg">
+      <i class="fas fa-user-circle"></i>
+    </button>
+    <button class="text-main text-lg">
+      <i class="fas fa-shopping-bag"></i>
+    </button>
+  </div>
+</header>
+
