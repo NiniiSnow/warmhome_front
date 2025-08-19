@@ -1,6 +1,6 @@
-<header class="bg-[#f8f5ef] w-full px-6 py-4 flex justify-between items-center">
+<header class="bg-[#f8f5ef] w-full px-6 py-4 flex max-md:flex-col-reverse justify-between items-center">
   <!-- Left icons -->
-  <div class="flex gap-3 items-center">
+  <div class="flex gap-3 items-center max-md:hidden w-1/5">
     <button 
     (click)="redirectToFacebookPage()"
     class="rounded-full w-10 h-10">
@@ -17,70 +17,51 @@
   </div>
 
   <!-- Center navigation -->
-  <nav class="flex flex-col items-center gap-2">
+  <nav class="flex flex-col items-center gap-2 w-3/5">
     <img 
-    src="/images/warm-home-icon.png" 
-    alt="Lovely Roses Logo"
-    width="80"
-    height="80"
-    loading="eager" 
+      src="/images/warm-home-icon.png" 
+      alt="Lovely Roses Logo"
+      width="80"
+      height="80"
+      loading="eager" 
     />
-    <ul class="flex gap-6 text-main text-sm font-medium">
-      <li 
-      class="cursor-pointer hover:text-orange-700"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact: true}"
-      routerLink="/"
-      >{{ "Home" }}
+    <ul class="flex gap-6 text-main text-sm font-medium justify-center items-center">
+      <li class="cursor-pointer hover:text-orange-700" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">მთავარი</li>
+      <li class="cursor-pointer hover:text-orange-700" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/about">ჩვენს შესახებ</li>
+      <li class="cursor-pointer hover:text-orange-700" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/products">პროდუქტები</li>
+      <li>
+        <!-- Burger menu button (mobile only) -->
+        <button class="md:hidden w-7 h-7 hover:text-orange-500" (click)="openMenu()">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
       </li>
-      <li 
-      class="cursor-pointer hover:text-orange-700"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact: true}"
-      routerLink="/about"
-      >
-      {{ "About"  }}
-      </li>
-      <li 
-      class="cursor-pointer hover:text-orange-700"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact: true}"
-      routerLink="/products"
-      >
-      {{ "Products" }}
-      </li>
-      <li 
-      class="cursor-pointer hover:text-orange-700">
-      {{ "FAQ" }}
-      </li>
-      <li 
-      class="cursor-pointer hover:text-orange-700"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact: true}"
-      routerLink="/blogs"
-      >
-        {{ "Blogs" }}</li>
-      <li 
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact: true}"
-      routerLink="/contact"
-      class="cursor-pointer hover:text-orange-700">
-        {{ "Contact" }}
-      </li>
+      <li class="cursor-pointer hover:text-orange-700 max-md:hidden">FAQ</li>
+      <li class="cursor-pointer hover:text-orange-700 max-md:hidden" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/blogs">ბლოგები</li>
+      <li class="cursor-pointer hover:text-orange-700 max-md:hidden" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/contact">კონტაქტი</li>
     </ul>
+    <!-- Burger menu dropdown (mobile only) -->
+    @if(showMenu()){
+    <div  class="md:hidden absolute top-[12rem] right-0 w-full bg-main shadow-lg rounded-lg z-50 cursor-pointer h-32">
+      <ul class="flex flex-col gap-4 p-4 text-[#f8f5ef] text-base font-medium">
+        <li class="cursor-pointer hover:text-orange-700" routerLink="/faq">FAQ</li>
+        <li class="cursor-pointer hover:text-orange-700" routerLink="/blogs">ბლოგები</li>
+        <li class="cursor-pointer hover:text-orange-700" routerLink="/contact">კონტაქტი</li>
+      </ul>
+    </div>
+    }
   </nav>
 
   <!-- Right section -->
-  <div class="flex items-center gap-4">
+  <div class="flex items-center justify-center md:justify-end gap-4 w-1/5">
     <button class="border border-main text-main rounded-full px-4 py-1 text-sm hover:bg-orange-100">
       Call us
     </button>
 
-    <div class="text-main text-sm flex items-center gap-2">
+    <!-- <div class="text-main text-sm flex items-center gap-2">
       <span class="hover:underline cursor-pointer">KA</span> ·
       <span class="underline cursor-pointer">EN</span> ·
-      <span class="hover:underline cursor-pointer">RU</span>
-    </div>
+      <span class="hover:underline cursor-pointer">RU</span>  
+    </div> -->
 
     <button class="text-main text-lg">
       <i class="fas fa-search"></i>
@@ -90,6 +71,16 @@
     </button>
     <button class="text-main text-lg">
       <i class="fas fa-shopping-bag"></i>
+    </button>
+    <button 
+    (click)="redirectToFacebookPage()"
+    class="rounded-full w-7 h-7 md:hidden">
+        <img 
+        src="/svg/facebook.svg" 
+        alt="Facebook Icon"
+        loading="eager"
+        class="w-full h-full"
+        />
     </button>
   </div>
 </header>

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 // import {
 //     TranslateService,
@@ -20,11 +20,16 @@ import { RouterModule } from '@angular/router';
 })
 export class Header {
   // private translate = inject(TranslateService);
-
+  public showMenu = signal(false);
   constructor() {
     // this.translate.addLangs(['ru', 'en' , 'ge']);
     // this.translate.setFallbackLang('en');
     // this.translate.use('en');
+  }
+
+  public openMenu(): void {
+    this.showMenu.update(v => !v);
+    console.log("SShow menu:", this.showMenu())
   }
 
   protected redirectToFacebookPage(): void {

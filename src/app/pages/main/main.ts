@@ -10,7 +10,6 @@ const COMPONENTS = [Header]
   selector: 'app-main',
   imports: [
     COMPONENTS,
-    RouterLink,
     RouterOutlet
   ],
   templateUrl: './main.html',
